@@ -1,1 +1,8 @@
 @import '~antd/dist/antd.css';
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}

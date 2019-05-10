@@ -1,25 +1,49 @@
 import React, { Component } from 'react';
-import Nav from './components/Nav';
-import HeroBanner from './components/HeroBanner';
-import About from './components/About';
-import Skills from './components/Skills';
-import ContactMe from './components/ContactMe';
-import Projects from './components/Projects';
+import { connect } from 'react-redux';
+import Landing from './Components/Landing';
+import ContactMe from './Components/ContactMe';
+import Portfolio from './Components/Portfolio';
+import Nav from './Components/Nav';
 import './App.css';
 
 class App extends Component {
+
   render() {
     return (
       <div>
-        <Nav/>
-        <HeroBanner />
-        <About />
-        <Skills />
-        <Projects />
-        <ContactMe />
+        <Landing />
+        {
+          this.props.page === 'quote' ?
+          <div>
+            <Nav 
+              type='quote'
+            />
+            <ContactMe /> 
+          </div>
+          :
+          null
+        }
+        {
+          this.props.page === 'portfolio' ?
+          <div>
+            <Nav 
+              type='portfolio'
+            />
+            <Portfolio /> 
+          </div> 
+          :
+          null
+        }
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    inOrOut: state.inOrOut,
+    page: state.page
+  }
+}
+
+export default connect(mapStateToProps)(App);

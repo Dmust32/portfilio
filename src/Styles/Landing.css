@@ -1,0 +1,229 @@
+@keyframes shrink {
+  from { width: 100vw;}
+  to { width: 0vw;}
+}
+
+@keyframes grow {
+  from { width: 0vw;}
+  to { width: 100vw;}
+}
+
+@keyframes shrinkBubble {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes growBubble{
+  from {
+    transform: scale(.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrinkLetters{
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes growLetters{
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.left {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50vw;
+}
+
+.left span {
+  background-color: #D91470;
+  width: 50vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.left-out span {
+  background-color: #D91470;
+  width: 0vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 15%, 0 85%);
+  clip-path: polygon(0 0, 100% 0, 100% 15%, 0 85%);
+}
+
+.left span {
+  animation: grow 1s ease forwards;
+}
+
+.left-out span {
+  animation: shrink 1s ease backwards;
+}
+
+.left .left-block {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 15%, 0 85%);
+  clip-path: polygon(0 0, 100% 0, 100% 15%, 0 85%);
+}
+
+.right {
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50vw;
+}
+
+.right span {
+  background-color: #73D9D9;
+  width: 50vw;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.right-out span {
+  background-color: #73D9D9;
+  width: 0vw;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  -webkit-clip-path: polygon(0 85%, 100% 15%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 85%, 100% 15%, 100% 100%, 0% 100%);
+}
+
+.right span {
+  animation: grow 1s ease forwards;
+}
+
+.right-out span {
+  animation: shrink 1s ease backwards; 
+}
+
+.right .right-block {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  -webkit-clip-path: polygon(0 85%, 100% 15%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 85%, 100% 15%, 100% 100%, 0% 100%);
+}
+
+.enter-bubble {
+  height: 600px;
+  width: 600px;
+  z-index: 3px;
+  border-radius: 50%;
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -3px 3px 20px -8px #0D0D0D
+}
+
+.enter-bubble-out {
+  height: 0px;
+  width: 0px;
+  z-index: 3px;
+  border-radius: 50%;
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -3px 3px 20px -8px #0D0D0D
+}
+
+.enter-bubble {
+  animation: growBubble 1s ease forwards;
+}
+
+.enter-bubble-out {
+  animation: shrinkBubble 1s ease backwards;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container-out {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container-out h1 {
+  display: none
+}
+
+.title {
+  color: white;
+  font-size: 50px;
+  font-family: 'Anton', sans-serif;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 0
+}
+
+.name {
+  color: white;
+  font-size: 100px;
+  font-family: 'Anton', sans-serif;
+  margin-left: 40px;
+  margin-bottom: 0px;
+  font-style: italic
+}
+
+#yellow {
+  color:#F2D230
+}
+
+.title-container {
+  animation: growLetters 1.1s ease forwards;
+}
+
+.title-container-out {
+  animation: shrinkLetters .5s ease backwards;
+}
+
+.main-button {
+  height: 80px !important;
+  width: 280px !important; 
+  margin-bottom: 20px;
+  background-color: #73D9D9 !important;
+  border: 0px !important;
+  font-size: 20px !important
+}
+
+.secondary-button {
+  height: 80px !important; 
+  width: 280px !important;
+  border-color: #D91470 !important;
+  color: #D91470 !important;
+  font-size: 20px !important
+}
