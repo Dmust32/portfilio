@@ -1,0 +1,22 @@
+** Fields To Make
+-Name: First, Last
+-Email
+-Select
+  *Personal
+    -Site Type
+    -Budget
+    -Time Restrictions?
+    -Do you have a domain?
+    -Do you need it hosted?
+  *Company
+    -Company Name
+    -Business Type
+    -Budget
+    -Time Restrictions?
+    -Do you have a domain?
+    -Do you need it hosted?
+
+
+**ToDO
+-setup contact page(s)
+-decide on layout for portfolio sections

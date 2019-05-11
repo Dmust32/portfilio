@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser= require('body-parser');
 const cors = require('cors');
-
 const emailer = require('./controllers/emailer')
+require('dotenv').config();
 
 const app = express();
 const port = 5050;
