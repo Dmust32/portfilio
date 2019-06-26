@@ -2,7 +2,18 @@ const nodemailer = require('nodemailer');
 
 module.exports = {
   sendQuote: (req,res) => {
-    const { client, quote } = req.body;
+    const { 
+      firstName,
+      lastName,
+      email,
+      companyName,
+      industry,
+      siteType,
+      budget,
+      timeFrame,
+      hasDomain,
+      needsHosted 
+    } = req.body;
     const { EMAIL, PASS } = process.env;
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
@@ -16,9 +27,17 @@ module.exports = {
     const mailOptions = {
       from: `${EMAIL}`,
       to: `${EMAIL}`,
-      subject: `Quote request from ${client}`,
-      text: quote,
-      html: `<p>Here is a quote request. ${quote}</p>`
+      subject: `Quote request from ${firstName} ${lastName}`,
+      text: 'quote',
+      html: 
+        `<h1>${companyName}</h1>
+        <h1>${industry}</h1>
+        <h1>${siteType}</h1>
+        <h1>${budget}</h1>
+        <h1>${timeFrame}</h1>
+        <h1>${hasDomain}</h1>
+        <h1>${needsHosted}</h1>
+        <h1>${email}</h1>`
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
