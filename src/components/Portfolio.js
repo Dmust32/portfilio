@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import '../Styles/Portfolio.less'
 
 class Portfolio extends Component {
   render() {
     return (
-      <div>
-        <h1>Portfolio</h1>
+      <div className='parallax-wrapper'>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     )
   }
