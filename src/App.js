@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Landing from './Components/Landing';
-import ContactMe from './Components/ContactMe';
-import Portfolio from './Components/Portfolio';
-import Nav from './Components/Nav';
+import Landing from './components/Landing';
+import ContactMe from './components/ContactMe';
+import Portfolio from './components/Portfolio';
+import Nav from './components/Nav';
 import './App.css';
 
 class App extends Component {
